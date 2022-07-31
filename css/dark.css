@@ -77,3 +77,9 @@ body {
 #info {
   fill: #71C9CE;
 }
+
+@media (max-width: 800px){ 
+  .cell {
+    box-shadow: 0 0 1px #EEEEEE inset;
+  }
+}

@@ -66,3 +66,9 @@ body {
   color: #EEEEEE;
   background-color: rgba(57, 62, 70, .8);
 }
+
+@media (max-width: 800px){ 
+  .cell {
+    box-shadow: 0 0 1px #393E46 inset;
+  }
+}
