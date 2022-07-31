@@ -70,7 +70,6 @@ function handleClick(cell) {
   if (current.includes(cell.id)) {
     return;
   }
-  cell.innerHTML = current.length + 1;
   cell.classList.add('visited');
   current.push(cell.id);
   localStorage.setItem('visited', JSON.stringify(current));
