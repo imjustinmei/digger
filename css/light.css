@@ -1,0 +1,68 @@
+body {
+  background-color: #F9F9F9;
+}
+
+.nav {
+  fill: #393E46;
+}
+
+.nav:hover {
+  fill: #52616B;
+}
+
+.cant {
+  fill: #C9D6DF;
+  pointer-events: none;
+}
+
+#board {
+  border: .5em solid #393E46;
+}
+
+.cell {
+  color: #DBE2EF;
+  background-color: white;
+}
+
+.cell:hover {
+  background-color: #DBE2EF;
+  box-shadow: 0 0 11px rgba(57, 62, 70, .25);
+}
+
+.done {
+  color: black;
+  animation: flicker .3s 1 alternate;
+}
+
+@keyframes flicker {
+  50%  { background-color: #F6F6F6 }
+}
+
+.visited {
+  animation: scale .3s 1;
+  background-color: #DBE2EF;
+}
+
+.win {
+  color: black;
+  background-color:#E0F9B5;
+}
+
+.win:hover {
+  background-color: #E0F9B5;
+  box-shadow: 0 0 11px rgba(224, 249, 181, 1);
+}
+
+#toggle {
+  fill: #393E46;
+}
+
+#toggle:hover {
+  cursor: pointer;
+  fill: #52616B;
+}
+
+#info .tooltip {
+  color: #EEEEEE;
+  background-color: rgba(57, 62, 70, .8);
+}

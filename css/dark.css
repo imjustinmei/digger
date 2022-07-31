@@ -1,0 +1,79 @@
+body {
+  background-color: black;
+}
+
+#tomorrow {
+  color: #71C9CE;
+}
+
+.nav {
+  fill: #71C9CE;
+}
+
+.nav:hover {
+  fill: #CBF1F5;
+}
+
+.cant {
+  fill: #393E46;
+  pointer-events: none;
+}
+
+#board {
+  border: .5em solid #71C9CE;
+}
+
+.cell {
+  color: #393E46;
+  background-color: #222831;
+}
+
+.cell:hover {
+  background-color: #393E46;
+  box-shadow: 0 0 11px rgba(82, 97, 107, 1);
+}
+
+.done {
+  color: #EEEEEE;
+  animation: flicker .3s 1 alternate;
+}
+
+@keyframes flicker {
+  50%  { background-color: #52616B }
+}
+
+.visited {
+  animation: scale .3s 1;
+  background-color: #393E46;
+}
+
+.win {
+  color: #E3FDFD;
+  background-color: #71C9CE;
+}
+
+.win:hover {
+  background-color: #95E1D3;
+}
+
+#date {
+  color: #71C9CE;
+}
+
+#toggle {
+  fill: #71C9CE;
+}
+
+#toggle:hover {
+  cursor: pointer;
+  fill: #CBF1F5;
+}
+
+#info .tooltip {
+  background-color: rgba(57, 62, 70, .8);
+  color: #EEEEEE;
+}
+
+#info {
+  fill: #71C9CE;
+}
