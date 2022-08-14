@@ -78,6 +78,8 @@ function handleClick(cell) {
     updatePast(1);
     localStorage.setItem('won', 1);
     document.getElementById('tomorrow').innerHTML = 'dig more tomorrow';
+    localStorage.setItem('currentIndex', JSON.parse(localStorage.getItem('past')).length - 1);
+    adjustArrows();
   }
 }
 
