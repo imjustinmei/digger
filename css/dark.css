@@ -3,83 +3,85 @@ body {
 }
 
 #tomorrow {
-  color: #71C9CE;
+  color: #71c9ce;
 }
 
 .nav {
-  fill: #71C9CE;
+  fill: #71c9ce;
 }
 
 .nav:hover {
-  fill: #CBF1F5;
+  fill: #cbf1f5;
 }
 
 .cant {
-  fill: #393E46;
+  fill: #393e46;
   pointer-events: none;
 }
 
 #board {
-  border: .5em solid #71C9CE;
+  border: 0.5em solid #2c3333;
 }
 
 .cell {
-  color: #393E46;
+  color: #393e46;
   background-color: #222831;
 }
 
 .cell:hover {
-  background-color: #393E46;
+  background-color: #393e46;
   box-shadow: 0 0 11px rgba(82, 97, 107, 1);
 }
 
 .done {
-  color: #EEEEEE;
-  animation: flicker .3s 1 alternate;
+  color: #eeeeee;
+  animation: flicker 0.3s 1 alternate;
 }
 
 @keyframes flicker {
-  50%  { background-color: #52616B }
+  50% {
+    background-color: #52616b;
+  }
 }
 
 .visited {
-  animation: scale .3s 1;
-  background-color: #393E46;
+  animation: scale 0.3s 1;
+  background-color: #393e46;
 }
 
 .win {
-  color: #E3FDFD;
-  background-color: #71C9CE;
+  color: #e3fdfd;
+  background-color: #71c9ce;
 }
 
 .win:hover {
-  background-color: #95E1D3;
+  background-color: #95e1d3;
 }
 
 #date {
-  color: #71C9CE;
+  color: #71c9ce;
 }
 
 #toggle {
-  fill: #71C9CE;
+  fill: #71c9ce;
 }
 
 #toggle:hover {
   cursor: pointer;
-  fill: #CBF1F5;
-}
-
-#info .tooltip {
-  background-color: rgba(57, 62, 70, .8);
-  color: #EEEEEE;
+  fill: #cbf1f5;
 }
 
 #info {
-  fill: #71C9CE;
+  fill: #71c9ce;
 }
 
-@media (max-width: 800px){ 
+#info .tooltip {
+  background-color: rgba(57, 62, 70, 0.8);
+  color: #eeeeee;
+}
+
+@media (max-width: 800px) {
   .cell {
-    box-shadow: 0 0 1px #EEEEEE inset;
+    box-shadow: 0 0 1px #eeeeee inset;
   }
 }

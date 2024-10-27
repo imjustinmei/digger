@@ -1,74 +1,75 @@
 body {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
 }
 
 .nav {
-  fill: #393E46;
+  fill: #393e46;
 }
 
 .nav:hover {
-  fill: #52616B;
+  fill: #52616b;
 }
 
 .cant {
-  fill: #C9D6DF;
+  fill: #c9d6df;
   pointer-events: none;
 }
 
 #board {
-  border: .5em solid #393E46;
+  border: 0.5em solid #393e46;
 }
 
 .cell {
-  color: #DBE2EF;
   background-color: white;
 }
 
 .cell:hover {
-  background-color: #DBE2EF;
-  box-shadow: 0 0 11px rgba(57, 62, 70, .25);
+  background-color: #dbe2ef;
+  box-shadow: 0 0 11px rgba(57, 62, 70, 0.25);
 }
 
 .done {
   color: black;
-  animation: flicker .3s 1 alternate;
+  animation: flicker 0.3s 1 alternate;
 }
 
 @keyframes flicker {
-  50%  { background-color: #F6F6F6 }
+  50% {
+    background-color: #f6f6f6;
+  }
 }
 
 .visited {
-  animation: scale .3s 1;
-  background-color: #DBE2EF;
+  animation: scale 0.3s 1;
+  background-color: #dbe2ef;
 }
 
 .win {
   color: black;
-  background-color:#E0F9B5;
+  background-color: #e0f9b5;
 }
 
 .win:hover {
-  background-color: #E0F9B5;
+  background-color: #e0f9b5;
   box-shadow: 0 0 11px rgba(224, 249, 181, 1);
 }
 
 #toggle {
-  fill: #393E46;
+  fill: #393e46;
 }
 
 #toggle:hover {
   cursor: pointer;
-  fill: #52616B;
+  fill: #52616b;
 }
 
 #info .tooltip {
-  color: #EEEEEE;
-  background-color: rgba(57, 62, 70, .8);
+  color: #eeeeee;
+  background-color: rgba(57, 62, 70, 0.8);
 }
 
-@media (max-width: 800px){ 
+@media (max-width: 800px) {
   .cell {
-    box-shadow: 0 0 1px #393E46 inset;
+    box-shadow: 0 0 1px #393e46 inset;
   }
 }
