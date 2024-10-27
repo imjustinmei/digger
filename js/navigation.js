@@ -1,52 +1,39 @@
-function navigate(direction) {
-  let check = arrowCheck();
-  let newIndex = parseInt(localStorage.getItem('currentIndex')) + direction;
-  if (direction == -1) {
-    if (!check[0]) {
-      return;
-    }
-    localStorage.setItem('currentIndex', newIndex);
-    let past = JSON.parse(localStorage.getItem('past'))[newIndex];
-    for (let cell of document.getElementsByClassName('cell')) {
-      cell.className = 'cell';
-      cell.innerHTML = '';
-    }
-    setTimeout(() => {
-      render(past.slice(2), past[1]);
-    }, 50);
-    document.getElementById('date').innerHTML = past[0];
-    adjustArrows();
-  } else {
-    if (!check[1]) {
-      return;
-    }
-    localStorage.setItem('currentIndex', newIndex);
-    let past = JSON.parse(localStorage.getItem('past'))[newIndex];
-    for (let cell of document.getElementsByClassName('cell')) {
-      cell.className = 'cell';
-      cell.innerHTML = '';
-    }
-    setTimeout(() => {
-      render(past.slice(2), past[1]);
-    }, 50);
-    document.getElementById('date').innerHTML = past[0];
-    adjustArrows();
-  }
-}
+const navigate = (direction) => {
+  const check = arrowCheck();
+  if ((direction == -1 && !check[0]) || (direction == 1 && !check[1])) return;
 
-function arrowCheck() {
-  let past = JSON.parse(localStorage.getItem('past'));
-  let currentIndex = parseInt(localStorage.getItem('currentIndex'));
-  return [past[currentIndex - 1] && currentIndex != 0 ? 1 : 0, past[currentIndex + 1] != undefined ? 1 : 0];
-}
+  currentIndex += direction;
+  const past = JSON.parse(get("past"))[currentIndex];
 
-function adjustArrows() {
-  !arrowCheck()[0] ? document.getElementById('backward').classList.add('cant') : document.getElementById('backward').classList.remove('cant');
-  !arrowCheck()[1] ? document.getElementById('forward').classList.add('cant') : document.getElementById('forward').classList.remove('cant');
-}
+  setTimeout(() => {
+    render(past.slice(2), past[1], past[0]);
+  }, 50);
+  adjustArrows();
+};
 
-document.querySelectorAll('.nav').forEach((button) => {
-  button.addEventListener('click', () => {
-    navigate(button.id == 'backward' ? -1 : 1);
+const arrowCheck = () => {
+  const won = parseInt(get("won"));
+  if (!won) return [0, 0];
+
+  const past = JSON.parse(get("past"));
+
+  return [past[currentIndex - 1] && currentIndex, past[currentIndex + won]];
+};
+
+const adjustArrows = () => {
+  const arrows = arrowCheck();
+
+  document.getElementById("backward").classList.toggle("cant", !arrows[0]);
+  document.getElementById("forward").classList.toggle("cant", !arrows[1]);
+};
+
+document.querySelectorAll(".nav").forEach((button) => {
+  button.addEventListener("click", () => {
+    navigate(button.id == "backward" ? -1 : 1);
   });
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key == "ArrowLeft") navigate(-1);
+  else if (event.key == "ArrowRight") navigate(1);
 });
